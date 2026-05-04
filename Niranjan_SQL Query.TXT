@@ -1,0 +1,10 @@
+--Query To Get List of Jobs will execute in sequence based on Dependency
+SELECT 
+D.UNIT_NBR            
+,D.STEP_SEQ_ID         
+,D.STEP_DEP_ID         
+,P.STEP_PROG_NAME      
+FROM DEPENDENCY_RULES D
+INNER JOIN PROG_NAME P 
+ON D.UNIT_NBR = P.UNIT_NBR 
+AND D.STEP_SEQ_ID = P.STEP_SEQ_ID;
